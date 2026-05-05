@@ -8,7 +8,6 @@ author 'Azakit'
 description 'Pause Menu'
 
 shared_scripts {
-    '@ox_lib/init.lua',
     'config.lua',
 }
 
@@ -32,4 +31,5 @@ escrow_ignore {
     'fxmanifest.lua',
     'config.lua'
 }
+
 dependency '/assetpacks'
