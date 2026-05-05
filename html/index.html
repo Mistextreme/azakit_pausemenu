@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="pause-menu">
+        <div class="info-container">
+            <div id="current-time">Current Time</div>
+            <div id="player-id">Player ID: 0</div>
+        </div>
+
+        <div class="menu-header">
+            <h1><span id="server-name">Pause Menu</span></h1>
+        </div>
+
+        <div class="menu-options">
+            <div class="menu-option" id="map">
+                <i class="fas fa-map"></i>
+                <div class="option-info">
+                    <h2 id="map-h2">Map</h2>
+                    <p id="map-p">Open the map</p>
+                </div>
+            </div>
+
+            <div class="menu-option" id="settings">
+                <i class="fas fa-cogs"></i>
+                <div class="option-info">
+                    <h2 id="settings-h2">Settings</h2>
+                    <p id="settings-p">Modify game settings</p>
+                </div>
+            </div>
+
+            <div class="menu-option" id="announcement">
+                <i class="fas fa-paste"></i>
+                <div class="option-info">
+                    <h2 id="rules-h2">HELP</h2>
+                    <div class="announcement-content" id="rules-div">
+                        <p>• Type /guide in chat</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-option" id="quit">
+                <i class="fas fa-sign-out-alt"></i>
+                <div class="option-info">
+                    <h2 id="exit-h2">Exit</h2>
+                    <p id="exit-p">Leave the game</p>
+                </div>
+            </div>
+            
+            <div class="player-stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-user-tag"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Name</span>
+                        <span id="stat-name" class="stat-value">Loading...</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-briefcase"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Job</span>
+                        <span id="stat-job" class="stat-value">Unemployed</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-wallet"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Cash</span>
+                        <span id="stat-cash" class="stat-value">$ 0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-university"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Bank</span>
+                        <span id="stat-bank" class="stat-value">$ 0</span>
+                    </div>
+                </div>
+            </div> 
+
+            <div id="discord-copy-btn" class="discord-card">
+                <i class="fab fa-discord"></i>
+                <div class="discord-info">
+                    <span id="discord-url" class="discord-value">discord.gg/server</span>
+                </div>
+            </div>  
+            
+            <div id="website-btn" class="discord-card website-card">
+                <i class="fas fa-globe"></i>
+                <div class="discord-info">
+                    <span id="website-url" class="discord-value">www.myserver.com</span>
+                </div>
+            </div>          
+        </div>
+
+        <div class="menu-footer">
+            <div class="esc-badge">ESC</div>
+            <span class="footer-text">Resume Game</span>
+        </div>        
+    </div>
+    
+    <div id="confirmationPopup" class="confirmation-popup">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fas fa-triangle-exclamation"></i>
+            </div>
+            <h2>Are you sure?</h2>
+            <p id="popup-text">Unsaved progress may be lost.</p>
+            <div class="buttons">
+                <button id="confirmAction" class="btn-confirm">YES</button>
+                <button id="cancelAction" class="btn-cancel">CANCEL</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="rules-popup" class="confirmation-popup">
+        <div class="popup-content">
+            <h2 id="rules-popup-title"></h2>
+            <div id="rules-list-container"></div>
+            <div class="buttons">
+                <button id="close-rules" class="btn-cancel">CLOSE</button>
+            </div>
+        </div>
+    </div>       
+
+</body>
+</html>
+
+
+
